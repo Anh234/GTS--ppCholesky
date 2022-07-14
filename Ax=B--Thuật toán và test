@@ -1,9 +1,9 @@
 Thuật toán:
-      Cholesky1: Tính A1 = At.A
-      Cholesky2: Tính B1 = At.B
+      Cholesky1: Tính A1 = A^t.A
+      Cholesky2: Tính B1 = A^t.B
       Cholesky   : Tìm ma trận tam giác trên S theo khai triển Cholesky của A1
       Cholesky3: Giải phương trình S.Y=B để tìm Y
-      Cholesky4: Giải phương trình St.X=Y để tìm X
+      Cholesky4: Giải phương trình S^t.X=Y để tìm X
       Thuật toán cuối cùng.
       
       
