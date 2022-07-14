@@ -1,0 +1,77 @@
+Thuật toán:
+   Cholesky : Tìm ma trận tam giác trên S
+   Cholesky3: Tính Y= E/B=B^-1=S^-1 *(S^t)^-1
+   Hàm chính:
+      Load matrix A từ file "test2.txt" cùng vị trí với file code nguồn
+      Nếu A đối xứng thì A=A1=B và A^-1= B^-1= Y, kết hợp điều kiện detS -> Kết quả
+      Nếu A ko đối xứng thì A1=A*A^t=B=S*S^t và A^-1= Y*A^t, kết hợp điều kiện detS -> Kết quả  
+      
+      
+ Test:
+      
+ TH1: Matrix A ko đối xứng và Det !=0
+ 
+     The input matrix is:
+        [[ 4.+0.j  1.+0.j  2.+0.j]
+         [ 2.+0.j  2.+0.j  2.+0.j]
+         [-3.+0.j  3.+0.j  2.+0.j]]
+      =================================
+      ma tran S:
+          [[ 4.582576+0.j  3.05505 +0.j -1.091089+0.j]
+           [ 0.      +0.j  1.632993+0.j  4.490731+0.j]
+            [ 0.      +0.j  0.      +0.j  0.801784+0.j]]
+      ===============================
+      The inverse matrix is:
+          [[-0.333333+0.j  0.666667+0.j -0.333333+0.j]
+           [-1.666667+0.j  2.333333+0.j -0.666667+0.j]
+            [ 2.      +0.j -2.5     +0.j  1.      +0.j]]
+        ===============================
+        
+        
+  TH2: Matrix A ko đối xứng và Det = 0
+  
+      The input matrix is:
+        [[ 4.+0.j  1.+0.j  2.+0.j]
+          [ 2.+0.j  2.+0.j  2.+0.j]
+          [-3.+0.j  3.+0.j  1.+0.j]]
+      =================================
+      ma tran S:
+        [[ 4.582576+0.j  3.05505 +0.j -1.527525+0.j]
+         [ 0.      +0.j  1.632993+0.j  4.082483+0.j]
+          [ 0.      +0.j  0.      +0.j  0.      +0.j]]
+      Ma tran A1 co dinh thuc bang 0 nen khong the khai trien Cholesky
+      
+      
+  TH3: Matrix A đối xứng và Det !=0
+  
+      The input matrix is:
+        [[1.+0.j 2.+0.j 3.+0.j]
+          [2.+0.j 1.+0.j 5.+0.j]
+          [3.+0.j 5.+0.j 1.+0.j]]
+        =================================
+       ma tran S:
+          [[1.+0.j       2.+0.j       3.+0.j      ]
+          [0.+0.j       0.+1.732051j 0.+0.57735j ]
+          [0.+0.j       0.+0.j       0.+2.768875j]]
+
+        ===============================
+      The inverse matrix is:
+          [[-1.043478+0.j  0.565217+0.j  0.304348+0.j]
+          [ 0.565217+0.j -0.347826+0.j  0.043478+0.j]
+          [ 0.304348+0.j  0.043478+0.j -0.130435+0.j]]
+        ===============================
+        
+        
+TH4: Matrix A đối xứng và Det = 0 
+
+    The input matrix is:
+      [[1.+0.j 2.+0.j 3.+0.j]
+        [2.+0.j 4.+0.j 4.+0.j]
+        [3.+0.j 4.+0.j 4.+0.j]]
+     =================================
+    ma tran S:
+      [[1.+0.j 2.+0.j 0.+0.j]
+        [0.+0.j 0.+0.j 0.+0.j]
+        [0.+0.j 0.+0.j 0.+0.j]]
+    Ma tran A1 co dinh thuc bang 0 nen khong the khai trien Cholesky
+  
