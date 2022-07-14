@@ -1,0 +1,171 @@
+Thuật toán:
+      Cholesky1: Tính A1 = At.A
+      Cholesky2: Tính B1 = At.B
+      Cholesky   : Tìm ma trận tam giác trên S theo khai triển Cholesky của A1
+      Cholesky3: Giải phương trình S.Y=B để tìm Y
+      Cholesky4: Giải phương trình St.X=Y để tìm X
+      Thuật toán cuối cùng.
+      
+      
+      
+ Test: 
+ 
+ 
+ TH1: Ma trận A đối xứng và no duy nhất
+ 
+    Nhập bậc của ma trận A: 3
+    Nhập phần tử A[1][1]= 1
+    Nhập phần tử A[1][2]= 2
+    Nhập phần tử A[1][3]= 3
+    Nhập phần tử A[2][1]= 2
+    Nhập phần tử A[2][2]= 1
+    Nhập phần tử A[2][3]= 4
+    Nhập phần tử A[3][1]= 3
+    Nhập phần tử A[3][2]= 4
+    Nhập phần tử A[3][3]= 1
+       A= [[1.+0.j 2.+0.j 3.+0.j]
+           [2.+0.j 1.+0.j 4.+0.j]
+           [3.+0.j 4.+0.j 1.+0.j]]
+
+     Nhập ma trận B:
+     Nhập phần tử B[1]= 4
+     Nhập phần tử B[2]= 5
+     Nhập phần tử B[3]= 8
+        B= [4.+0.j 5.+0.j 8.+0.j]
+
+     Giải hệ phương trình tuyến tính bằng phương pháp Cholesky: AX=B
+     Tìm ma trận A1 đối xứng:
+      A là ma trận vuông đối xứng có thể khai triển theo Cholesky
+    Khi đó phương trình trở thành A1*X=B1, với:
+        A1= [[1.+0.j 2.+0.j 3.+0.j]
+            [2.+0.j 1.+0.j 4.+0.j]
+            [3.+0.j 4.+0.j 1.+0.j]]
+      và B1= [4.+0.j 5.+0.j 8.+0.j]
+
+     Phân tích A1 theo Cholesky: A1=S^t*S
+       S= [[1.+0.j         2.+0.j         3.+0.j        ]
+          [0.+0.j         0.+1.73205081j 0.+1.15470054j]
+          [0.+0.j         0.+0.j         0.+2.5819889j ]]
+
+     Khi đó phương trình trở thành: S^t*S*X=B1
+     Đặt Y=S*X có: S^t*Y=B1
+     Giải phương trình này ta được:
+        Y= [4.+0.j         0.+1.73205081j 0.+0.77459667j]
+     Giải phương trình SX=Y ta được nghiệm của phương trình:
+         X= [1.5+0.j 0.8+0.j 0.3+0.j]
+
+
+TH2: Matrix A đối xứng và det=0
+
+    Nhập bậc của ma trận A: 3
+    Nhập phần tử A[1][1]= 1
+    Nhập phần tử A[1][2]= 2
+    Nhập phần tử A[1][3]= 1
+    Nhập phần tử A[2][1]= 2
+    Nhập phần tử A[2][2]= 4
+    Nhập phần tử A[2][3]= 2
+    Nhập phần tử A[3][1]= 1
+    Nhập phần tử A[3][2]= 2
+    Nhập phần tử A[3][3]= 1
+      A= [[1.+0.j 2.+0.j 1.+0.j]
+          [2.+0.j 4.+0.j 2.+0.j]
+          [1.+0.j 2.+0.j 1.+0.j]]
+
+    Nhập ma trận B:
+    Nhập phần tử B[1]= 1
+    Nhập phần tử B[2]= 4
+    Nhập phần tử B[3]= 7
+        B= [1.+0.j 4.+0.j 7.+0.j]
+
+    Giải hệ phương trình tuyến tính bằng phương pháp Cholesky: AX=B
+    Tìm ma trận A1 đối xứng:
+    A là ma trận vuông đối xứng có thể khai triển theo Cholesky
+    Khi đó phương trình trở thành A1*X=B1, với:
+        A1= [[1.+0.j 2.+0.j 1.+0.j]
+            [2.+0.j 4.+0.j 2.+0.j]
+            [1.+0.j 2.+0.j 1.+0.j]]
+      và B1= [1.+0.j 4.+0.j 7.+0.j]
+    
+    Ma trận A1 có định thức bằng 0 nên không thể khai triển Cholesky
+    Suy ra phương trình AX=B không có nghiệm duy nhất
+    
+    
+ TH3: matrix A ko đối xứng và có no duy nhất
+    
+    Nhập bậc của ma trận A: 3
+    Nhập phần tử A[1][1]= 4+2j
+    Nhập phần tử A[1][2]= 4
+    Nhập phần tử A[1][3]= 5
+    Nhập phần tử A[2][1]= 1
+    Nhập phần tử A[2][2]= 7
+    Nhập phần tử A[2][3]= 9
+    Nhập phần tử A[3][1]= 3
+    Nhập phần tử A[3][2]= 4
+    Nhập phần tử A[3][3]= 5
+    A= [[4.+2.j 4.+0.j 5.+0.j]
+        [1.+0.j 7.+0.j 9.+0.j]
+        [3.+0.j 4.+0.j 5.+0.j]]
+
+    Nhập ma trận B:
+    Nhập phần tử B[1]= 7
+    Nhập phần tử B[2]= 4+5j
+    Nhập phần tử B[3]= 1
+      B= [7.+0.j 4.+5.j 1.+0.j]
+
+    Giải hệ phương trình tuyến tính bằng phương pháp Cholesky: AX=B
+    Tìm ma trận A1 đối xứng:
+    A không đối xứng
+    Để giải được theo Cholesky ta cần nhân cả 2 vế với A^t:
+    Khi đó phương trình trở thành A1*X=B1, với:
+      A1= [[ 22.+16.j  35. +8.j  44.+10.j]
+          [ 35. +8.j  81. +0.j 103. +0.j]
+          [ 44.+10.j 103. +0.j 131. +0.j]]
+      và B1= [35.+19.j 60.+35.j 76.+45.j]
+
+    Phân tích A1 theo Cholesky: A1=S^t*S
+      S= [[4.95998695+1.61290747j 6.85597939-0.61654605j 8.61555742-0.78550548j]
+         [0.        +0.j         5.90659161+0.71564572j 7.62723528+0.88695805j]
+         [0.        +0.j         0.        +0.j         0.05638218+0.04486922j]]
+
+    Khi đó phương trình trở thành: S^t*S*X=B1
+    Đặt Y=S*X có: S^t*Y=B1
+    Giải phương trình này ta được:
+      Y= [7.50818762+1.38911416j 1.88796738+4.86816958j 2.59091598+0.14640571j]
+    Giải phương trình SX=Y ta được nghiệm của phương trình:
+      X= [  1.2 -2.4j -37.4+27.8j  29.4-20.8j]
+      
+      
+TH4: Matrix A ko đối xứng và det=0
+
+    Nhập bậc của ma trận A: 3
+    Nhập phần tử A[1][1]= 4
+    Nhập phần tử A[1][2]= 1
+    Nhập phần tử A[1][3]= 2
+    Nhập phần tử A[2][1]= 2
+    Nhập phần tử A[2][2]= 2
+    Nhập phần tử A[2][3]= 2
+    Nhập phần tử A[3][1]= -3
+    Nhập phần tử A[3][2]= 3
+    Nhập phần tử A[3][3]= 1
+    A= [[ 4.+0.j  1.+0.j  2.+0.j]
+        [ 2.+0.j  2.+0.j  2.+0.j]
+         [-3.+0.j  3.+0.j  1.+0.j]]
+
+    Nhập ma trận B:
+    Nhập phần tử B[1]= 4
+    Nhập phần tử B[2]= 8
+    Nhập phần tử B[3]= 9
+      B= [4.+0.j 8.+0.j 9.+0.j]
+
+    Giải hệ phương trình tuyến tính bằng phương pháp Cholesky: AX=B
+    Tìm ma trận A1 đối xứng:
+    A không đối xứng
+    Để giải được theo Cholesky ta cần nhân cả 2 vế với A^t:
+    Khi đó phương trình trở thành A1*X=B1, với:
+      A1= [[29.+0.j -1.+0.j  9.+0.j]
+          [-1.+0.j 14.+0.j  9.+0.j]
+          [ 9.+0.j  9.+0.j  9.+0.j]]
+      và B1= [ 5.+0.j 47.+0.j 33.+0.j]
+      
+    Ma trận A1 có định thức bằng 0 nên không thể khai triển Cholesky
+    Suy ra phương trình AX=B không có nghiệm duy nhất
