@@ -50,6 +50,7 @@ print('ma tran S:')
 print(S)
 if S[n-1][n-1] == 0:
     print('Ma tran A1 co dinh thuc bang 0 nen khong the khai trien Cholesky')
+    print('Ma tran khong kha nghich')
     quit()
 Y = cholesky3()
 Y = Y.dot(np.transpose(Y))
