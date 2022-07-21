@@ -40,6 +40,7 @@ Thuật toán:
          [ 0.      +0.j  1.632993+0.j  4.082483+0.j]
           [ 0.      +0.j  0.      +0.j  0.      +0.j]]
       Ma tran A1 co dinh thuc bang 0 nen khong the khai trien Cholesky
+      Ma tran khong kha nghich
       
       
   TH3: Matrix A đối xứng và Det !=0
@@ -74,4 +75,5 @@ TH4: Matrix A đối xứng và Det = 0
         [0.+0.j 0.+0.j 0.+0.j]
         [0.+0.j 0.+0.j 0.+0.j]]
     Ma tran A1 co dinh thuc bang 0 nen khong the khai trien Cholesky
-  
+    Ma tran khong kha nghich
+    
